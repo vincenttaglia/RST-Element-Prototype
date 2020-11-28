@@ -1,13 +1,13 @@
 # RST Element Prototype Workflow
 
 ## Introduction
-In my latest project I am using a combination of Rails, Stimulus JS, and Tailwind CSS. I decided I would rather not do all of the new element prototyping in my Rails dev environment.
+In my latest project I am using a combination of Rails, Stimulus JS, and Tailwind CSS. I decided I would rather not do all of the new element prototyping in my Rails development environment.
 Instead, I created a separate environment for rapid HTML / TailwindCSS / Stimulus JS prototyping.
 
 ## Directory Structure
 ```
 ├── /dist                    # Webpack and Tailwind output directory
-│   ├── index.html              # Combined HTML including partials
+│   ├── index.html              # Render of index.html template with partials
 │   ├── main.js                 # Main output for Webpack/Stimulus
 │   └── tailwind.css            # Main output for Tailwind
 ├── /src                     # Source folder
@@ -26,14 +26,12 @@ Instead, I created a separate environment for rapid HTML / TailwindCSS / Stimulu
 ## Installation
 1. Clone this repository
 2.     yarn install
-3.     npx tailwindcss-cli@latest build ./src/tailwind.css -o ./dist/tailwind.css
-4.     yarn run start
+3.     yarn run start
 
 ### Notes
 * The main view will be available at [localhost:3000](http://localhost:3000)
 
-* You will have to run #3 every time you make changes to the tailwind.css file, including for condensing tailwind classes.
-
+* Live-reload is enabled for Templates, Partials, and JS though Webpack, as well as Tailwind.css changes via Concurrently and Nodemon.
 
 
 ## Configuration
@@ -41,7 +39,10 @@ Instead, I created a separate environment for rapid HTML / TailwindCSS / Stimulu
 ### Add JS Package for Stimulus
 Works just like it does when using Stimulus with Rails
 1.     yarn add [package-name]
-2.     include [package-object] from '[package-name]'
+2. Add the following to Stimulus controller:
+
+
+    include [package-object] from '[package-name]'
 
 ### Add Partial to Index
 
@@ -62,8 +63,10 @@ Works just like it does when using Stimulus with Rails
 2. Declare template in `webpack.config.js`
 
 
-    new HtmlWebpackPartialsPlugin({
-        path: path.join(__dirname, './src/partials/[new-partial].html'),
-        location: '[partial-element]',
-        template_filename: "index.html",
+    new HtmlWebpackPlugin({
+        title: "[Title]",
+        template: path.join(__dirname, "./src/templates/[new-template].html"),
+        filename: "[new-template].html",
+        minify: false,
+        inject: false,
     }),
