@@ -15,7 +15,7 @@
     "tailwindcss": "^2.0.1"
   },
   "scripts": {
-    "start": "webpack-cli serve"
+    "start": "npx tailwindcss-cli@latest build ./src/tailwind.css -o ./dist/tailwind.css && webpack-cli serve"
   },
   "devDependencies": {
     "extra-watch-webpack-plugin": "^1.0.3",

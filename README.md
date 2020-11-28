@@ -30,7 +30,7 @@ Instead, I created a separate environment for rapid HTML / TailwindCSS / Stimulu
 4.     yarn run start
 
 ### Notes
-* The main view will be available at `/dist/`
+* The main view will be available at [localhost:3000](http://localhost:3000)
 
 * You will have to run #3 every time you make changes to the tailwind.css file, including for condensing tailwind classes.
 
