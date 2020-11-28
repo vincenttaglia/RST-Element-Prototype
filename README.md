@@ -31,7 +31,14 @@ Instead, I created a separate environment for rapid HTML / TailwindCSS / Stimulu
 ### Notes
 * The main view will be available at [localhost:3000](http://localhost:3000)
 
-* Live-reload is enabled for Templates, Partials, and JS though Webpack, as well as Tailwind.css changes via Concurrently and Nodemon.
+* Watched config files: 
+  * Webpack:
+    * `webpack.config.js`
+    * `package.json`  
+  * Tailwind:
+    * `tailwind.config.js`
+    * `postcss.config.js`
+    * `/src/tailwind.css`
 
 
 ## Configuration
