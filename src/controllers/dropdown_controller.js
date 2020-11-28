@@ -1,5 +1,6 @@
 import { Controller } from "stimulus"
 import {useClickOutside} from "stimulus-use";
+import {enter, leave} from "el-transition";
 
 export default class extends Controller {
     static targets = [ "view" ];
@@ -12,12 +13,12 @@ export default class extends Controller {
 
     open(){
         this.isOpen = true;
-        this.viewTarget.classList.remove("hidden");
+        enter(this.viewTarget);
     }
 
     close(){
         this.isOpen = false;
-        this.viewTarget.classList.add("hidden");
+        leave(this.viewTarget);
     }
 
     toggle(){

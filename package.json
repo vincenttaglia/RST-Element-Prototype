@@ -9,6 +9,7 @@
     "@babel/preset-env": "^7.12.7",
     "autoprefixer": "^10.0.4",
     "babel-loader": "^8.2.2",
+    "el-transition": "^0.0.7",
     "postcss": "^8.1.10",
     "stimulus": "^1.1.1",
     "stimulus-use": "^0.17.0",
