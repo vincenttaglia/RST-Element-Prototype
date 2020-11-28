@@ -15,12 +15,14 @@
     "tailwindcss": "^2.0.1"
   },
   "scripts": {
-    "start": "npx tailwindcss-cli@latest build ./src/tailwind.css -o ./dist/tailwind.css && webpack-cli serve"
+    "start": "concurrently --kill-others \"nodemon --watch ./src/tailwind.css --exec \\\"npx tailwindcss-cli@latest build ./src/tailwind.css -o ./dist/tailwind.css\\\"\" \"webpack-cli serve\""
   },
   "devDependencies": {
+    "concurrently": "^5.3.0",
     "extra-watch-webpack-plugin": "^1.0.3",
     "html-webpack-partials-plugin": "^0.7.1",
     "html-webpack-plugin": "^4.5.0",
+    "nodemon": "^2.0.6",
     "webpack-cli": "^4.2.0",
     "webpack-dev-server": "^3.3.11"
   }
