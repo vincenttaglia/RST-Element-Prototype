@@ -1,4 +1,4 @@
-# RST Element Prototype Workflow
+# Rails / Stimulus / Tailwind Element Prototype Workflow
 
 ## Introduction
 In my latest project I am using a combination of Rails, Stimulus JS, and Tailwind CSS. I decided I would rather not do all of the new element prototyping in my Rails development environment.
