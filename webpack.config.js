@@ -6,15 +6,24 @@ const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin');
 module.exports = {
     mode: "development",
     watch: true,
+    output: {
+        filename: 'main.js',
+        path: path.resolve(__dirname, 'dist'),
+    },
     watchOptions: {
-        poll: true
+        poll: true,
+        ignored: ["node_modules/**"],
     },
     devServer: {
         port: 3000,
-        contentBase: './',
+        contentBase: path.resolve(__dirname),
+        watchContentBase: true,
+        compress: true,
+        publicPath: "/",
         watchOptions: {
-            poll: true
-        }
+            poll: true,
+            ignored: ["node_modules/**"],
+        },
     },
     module: {
         rules: [
