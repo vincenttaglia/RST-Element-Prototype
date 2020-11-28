@@ -50,19 +50,20 @@ Works just like it does when using Stimulus with Rails
 2. Add partial element to template
 3. Declare partial in `webpack.config.js`
 
-
+```
     new HtmlWebpackPartialsPlugin({
         path: path.join(__dirname, './src/partials/[new-partial].html'),
         location: '[partial-element]',
         template_filename: "index.html",
     }),
+```
 
 ### Add New Template
 
 1. Create template in `/src/templates`
 2. Declare template in `webpack.config.js`
 
-
+```
     new HtmlWebpackPlugin({
         title: "[Title]",
         template: path.join(__dirname, "./src/templates/[new-template].html"),
@@ -70,3 +71,4 @@ Works just like it does when using Stimulus with Rails
         minify: false,
         inject: false,
     }),
+```
