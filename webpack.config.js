@@ -6,6 +6,16 @@ const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin');
 module.exports = {
     mode: "development",
     watch: true,
+    watchOptions: {
+        poll: true
+    },
+    devServer: {
+        port: 3000,
+        contentBase: './',
+        watchOptions: {
+            poll: true
+        }
+    },
     module: {
         rules: [
             {
@@ -31,7 +41,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             title: "Index",
-            template: "./src/templates/index.html",
+            template: path.join(__dirname, "./src/templates/index.html"),
             filename: "index.html",
             minify: false,
             inject: false,
